@@ -1,9 +1,10 @@
 const express = require('express');
+
 const router = express.Router();
+
 const controller = require('../controllers/courses_controller');
 
-router.post('/', controller.post);
-router.put('/:id', controller.put);
-router.delete('/:id', controller.delete);
+router.get('/courses', controller.index);
+router.get('/courses/:id', controller.show);
 
 module.exports = router;

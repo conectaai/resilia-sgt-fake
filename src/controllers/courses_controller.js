@@ -1,13 +1,9 @@
-exports.post = (req, res, next) => {
-  res.status(201).send('Requisição recebida com sucesso!');
+const courses = require('../data/courses');
+
+exports.index = (req, res, next) => {
+  res.status(200).send(courses);
 };
 
-exports.put = (req, res, next) => {
-  let id = req.params.id;
-  res.status(201).send(`Requisição recebida com sucesso! ${id}`);
-};
-
-exports.delete = (req, res, next) => {
-  let id = req.params.id;
-  res.status(200).send(`Requisição recebida com sucesso! ${id}`);
+exports.show = (req, res, next) => {
+  res.status(200).send(courses[0]);
 };

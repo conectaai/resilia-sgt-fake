@@ -5,5 +5,7 @@ exports.index = (req, res, next) => {
 };
 
 exports.show = (req, res, next) => {
-  res.status(200).send(courses[0]);
+  const { id } = req.params;
+
+  res.status(200).send(courses[id+1]);
 };
